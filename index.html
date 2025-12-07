@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berger Express Painting - Color Your Imagination</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors (mimicking a paint brand palette) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'berger-blue': '#1a2a47', // Deep Navy/Indigo for primary
+                        'berger-gold': '#f5b041', // Bright Gold/Orange accent
+                        'berger-light': '#f7f9fc', // Off-white background
+                        'berger-accent': '#4a90e2', // A vibrant secondary color
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for professional flair */
+        .hero-bg {
+            background-image: url('https://placehold.co/1200x600/1a2a47/f5b041?text=Express+Painting+Services');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Custom shadow for card depth */
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-berger-light font-sans text-gray-800">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="flex-shrink-0">
+                <span class="text-2xl font-bold text-berger-blue">BERGER</span>
+                <span class="text-2xl font-bold text-berger-gold">XP</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-berger-blue font-semibold hover:text-berger-gold transition duration-150">Services</a>
+                <a href="#products" class="text-berger-blue font-semibold hover:text-berger-gold transition duration-150">Products</a>
+                <a href="#process" class="text-berger-blue font-semibold hover:text-berger-gold transition duration-150">Our Process</a>
+                <!-- 'Enquire Now' link removed as requested -->
+            </nav>
+            <button class="md:hidden p-2 text-berger-blue focus:outline-none">
+                <!-- Hamburger Icon -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-[70vh] flex items-center justify-center text-center p-4">
+        <div class="bg-white/80 p-8 md:p-12 rounded-xl card-shadow max-w-2xl">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-berger-blue leading-tight mb-4">
+                Paint Your Imagination. <span class="text-berger-gold">Faster. Cleaner. Smarter.</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+                Experience world-class Express Painting services for a flawless, dust-free home makeover.
+            </p>
+            <!-- Link changed to Services section -->
+            <a href="#services" class="inline-block bg-berger-gold text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                Explore Our Services
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section (scroll-mt-16 added to fix overlap) -->
+    <section id="services" class="py-16 bg-white scroll-mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-berger-blue mb-10 border-b-2 border-berger-gold inline-block pb-1">Our Signature Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Interior Painting -->
+                <div class="bg-berger-light p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.02]">
+                    <div class="text-5xl text-berger-gold mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold text-berger-blue mb-3">Luxury Interior Finishes</h3>
+                    <p class="text-gray-600">From low-VOC, anti-bacterial paints to stunning texture designs. We transform your indoor spaces with premium quality and lasting elegance.</p>
+                </div>
+                <!-- Service 2: Exterior Painting -->
+                <div class="bg-berger-light p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.02]">
+                    <div class="text-5xl text-berger-gold mb-4">🏠</div>
+                    <h3 class="text-xl font-semibold text-berger-blue mb-3">Weathercoat Protection</h3>
+                    <p class="text-gray-600">Protect your home against harsh weather. Our exterior paints offer superior durability, crack-resistance, and long-lasting color retention.</p>
+                </div>
+                <!-- Service 3: Waterproofing & Repair -->
+                <div class="bg-berger-light p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.02]">
+                    <div class="text-5xl text-berger-gold mb-4">💧</div>
+                    <h3 class="text-xl font-semibold text-berger-blue mb-3">Advanced Waterproofing</h3>
+                    <p class="text-gray-600">Stop seepage and leakage permanently. Using advanced moisture meters and specialized coatings for comprehensive wall and ceiling waterproofing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section (Dummy Content Added & fixed overlapping) -->
+    <section id="products" class="py-16 bg-berger-light scroll-mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-berger-blue mb-10 border-b-2 border-berger-gold inline-block pb-1">Featured Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
+                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=Silk+Breathe+Easy" alt="Silk Breathe Easy" class="mx-auto rounded-lg mb-4">
+                    <h3 class="font-bold text-berger-blue">Silk Breathe Easy</h3>
+                    <p class="text-sm text-gray-600">Luxury Interior Emulsion. Anti-bacterial & Anti-pollution.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
+                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=Weathercoat+All+Guard" alt="Weathercoat All Guard" class="mx-auto rounded-lg mb-4">
+                    <h3 class="font-bold text-berger-blue">Weathercoat All Guard</h3>
+                    <p class="text-sm text-gray-600">Superior Exterior Paint. High durability and UV protection.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
+                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=Luxol+Hi-Gloss" alt="Luxol Hi-Gloss" class="mx-auto rounded-lg mb-4">
+                    <h3 class="font-bold text-berger-blue">Luxol Hi-Gloss</h3>
+                    <p class="text-sm text-gray-600">Enamel Finish. Mirror-like sheen for wood and metal surfaces.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
+                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=PU+Polishes" alt="PU Polishes" class="mx-auto rounded-lg mb-4">
+                    <h3 class="font-bold text-berger-blue">Imperia PU Polishes</h3>
+                    <p class="text-sm text-gray-600">Premium Wood Coatings. Scratch and stain resistant finish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section (Dummy Content Added & fixed overlapping) -->
+    <section id="process" class="py-16 bg-white scroll-mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-berger-blue mb-10 border-b-2 border-berger-gold inline-block pb-1">Our 5-Step Express Process</h2>
+            <div class="flex flex-wrap justify-center text-left">
+                <!-- Step 1 -->
+                <div class="w-full md:w-1/5 p-4">
+                    <div class="text-4xl font-extrabold text-berger-gold">1.</div>
+                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Lead Capture</h4>
+                    <p class="text-sm text-gray-600">Customer enquires via website (This is where your AI agent is triggered).</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="w-full md:w-1/5 p-4">
+                    <div class="text-4xl font-extrabold text-berger-gold">2.</div>
+                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Virtual Qualification</h4>
+                    <p class="text-sm text-gray-600">Our AI Agent calls the customer for initial screening & appointment booking.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="w-full md:w-1/5 p-4">
+                    <div class="text-4xl font-extrabold text-berger-gold">3.</div>
+                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Site Inspection</h4>
+                    <p class="text-sm text-gray-600">Certified engineer visits the site with modern moisture-testing tools.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="w-full md:w-1/5 p-4">
+                    <div class="text-4xl font-extrabold text-berger-gold">4.</div>
+                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Express Painting</h4>
+                    <p class="text-sm text-gray-600">Supervised, mechanized, dust-free painting with superior product application.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="w-full md:w-1/5 p-4">
+                    <div class="text-4xl font-extrabold text-berger-gold">5.</div>
+                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Post-Job Cleanup</h4>
+                    <p class="text-sm text-gray-600">Thorough cleanup and handover of a spotless, beautifully finished space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placeholder for WordPress Form Integration -->
+    <section id="wp-contact-placeholder" class="py-16 bg-berger-accent">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center p-8 bg-white rounded-xl card-shadow">
+            <h2 class="text-3xl font-bold text-berger-blue mb-4">Book Your Free Consultation</h2>
+            <p class="text-lg text-gray-700 mb-6">
+                Place your WordPress/Elementor Contact Form Shortcode here to capture leads and trigger your AI agent.
+            </p>
+            <div class="border-2 border-dashed border-berger-gold p-6 text-gray-500 font-mono bg-berger-light rounded-lg">
+                &lt;!-- [wordpress_form_shortcode_goes_here] --&gt;
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-berger-blue text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Berger Express Painting (Demo). All rights reserved.</p>
+            <p class="text-sm mt-2 text-gray-400">Disclaimer: This is a static dummy website for demonstration purposes only.</p>
+        </div>
+    </footer>
+
+    <script>
+        // The previous JavaScript function for the dummy form has been removed
+        // since the form itself was removed. 
+        // A real WordPress shortcode will handle the submission.
+    </script>
+</body>
+</html>
