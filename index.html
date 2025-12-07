@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'berger-blue': '#1a2a47', // Deep Navy/Indigo for primary
-                        'berger-gold': '#f5b041', // Bright Gold/Orange accent
-                        'berger-light': '#f7f9fc', // Off-white background
-                        'berger-accent': '#4a90e2', // A vibrant secondary color
+                        'berger-blue': '#1a2a47', // Primary: Deep Navy/Indigo
+                        'berger-gold': '#f5b041', // Accent: Bright Gold/Orange
+                        'berger-light': '#f0f3f5', // Soft background
+                        'berger-accent': '#4a90e2', // Secondary vibrant accent
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -25,31 +25,36 @@
         }
     </script>
     <style>
-        /* Custom styles for professional flair */
+        /* Custom styles for professional flair and background image */
         .hero-bg {
-            background-image: url('https://placehold.co/1200x600/1a2a47/f5b041?text=Express+Painting+Services');
+            background-image: url('https://placehold.co/1920x800/1a2a47/f5b041?text=Your+Home,+Reimagined');
             background-size: cover;
             background-position: center;
         }
         /* Custom shadow for card depth */
         .card-shadow {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        /* Fix for sticky header overlap on anchor links */
+        section {
+            scroll-margin-top: 4rem; /* Height of the sticky header */
         }
     </style>
 </head>
 <body class="bg-berger-light font-sans text-gray-800">
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <!-- Navigation Bar (Sticky Header) -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg h-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
             <div class="flex-shrink-0">
-                <span class="text-2xl font-bold text-berger-blue">BERGER</span>
-                <span class="text-2xl font-bold text-berger-gold">XP</span>
+                <span class="text-3xl font-extrabold text-berger-blue">BERGER</span>
+                <span class="text-3xl font-extrabold text-berger-gold">XP</span>
             </div>
             <nav class="hidden md:flex space-x-8">
-                <a href="#services" class="text-berger-blue font-semibold hover:text-berger-gold transition duration-150">Services</a>
-                <a href="#products" class="text-berger-blue font-semibold hover:text-berger-gold transition duration-150">Products</a>
-                <a href="#process" class="text-berger-blue font-semibold hover:text-berger-gold transition duration-150">Our Process</a>
+                <a href="#services" class="text-gray-700 font-medium hover:text-berger-gold transition duration-150">Services</a>
+                <a href="#products" class="text-gray-700 font-medium hover:text-berger-gold transition duration-150">Products</a>
+                <a href="#process" class="text-gray-700 font-medium hover:text-berger-gold transition duration-150">Our Process</a>
+                <a href="#contact-form" class="text-berger-blue font-bold hover:text-berger-accent transition duration-150">Start Consultation</a>
             </nav>
             <button class="md:hidden p-2 text-berger-blue focus:outline-none">
                 <!-- Hamburger Icon -->
@@ -59,122 +64,136 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg h-[70vh] flex items-center justify-center text-center p-4">
-        <div class="bg-white/80 p-8 md:p-12 rounded-xl card-shadow max-w-2xl">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-berger-blue leading-tight mb-4">
-                Paint Your Imagination. <span class="text-berger-gold">Faster. Cleaner. Smarter.</span>
+    <section class="hero-bg h-[80vh] flex items-center justify-center p-4 text-center">
+        <div class="bg-white/90 p-10 md:p-16 rounded-2xl card-shadow max-w-3xl">
+            <h1 class="text-5xl sm:text-6xl font-black text-berger-blue leading-tight mb-4">
+                The Future of Home Painting. <span class="text-berger-gold">Guaranteed Clean.</span>
             </h1>
-            <p class="text-xl text-gray-600 mb-8">
-                Experience world-class Express Painting services for a flawless, dust-free home makeover.
+            <p class="text-xl text-gray-700 mb-8">
+                Mechanized, supervised, and time-bound painting services with premium Berger products.
             </p>
-            <!-- Link changed to the new contact form section -->
-            <a href="#contact-form" class="inline-block bg-berger-gold text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
-                Start Agent Consultation
+            <a href="#contact-form" class="inline-block bg-berger-gold text-berger-blue font-extrabold py-3 px-10 rounded-full shadow-xl hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+                Book FREE Expert Consultation
             </a>
         </div>
     </section>
 
-    <!-- Services Section (scroll-mt-16 added to fix overlap) -->
-    <section id="services" class="py-16 bg-white scroll-mt-16">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-berger-blue mb-10 border-b-2 border-berger-gold inline-block pb-1">Our Signature Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 class="text-4xl font-bold text-berger-blue mb-12 border-b-4 border-berger-gold inline-block pb-2">Our Signature Express Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <!-- Service 1: Interior Painting -->
-                <div class="bg-berger-light p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.02]">
-                    <div class="text-5xl text-berger-gold mb-4">🎨</div>
-                    <h3 class="text-xl font-semibold text-berger-blue mb-3">Luxury Interior Finishes</h3>
-                    <p class="text-gray-600">From low-VOC, anti-bacterial paints to stunning texture designs. We transform your indoor spaces with premium quality and lasting elegance.</p>
+                <div class="bg-berger-light p-8 rounded-xl card-shadow transition duration-300 hover:shadow-lg hover:ring-4 ring-berger-accent/30">
+                    <div class="text-6xl text-berger-gold mb-4">🏠</div>
+                    <h3 class="text-2xl font-bold text-berger-blue mb-3">Premium Interior Painting</h3>
+                    <p class="text-gray-600">Transform your living spaces with low-VOC, anti-bacterial emulsions like Silk Breathe Easy, offering deep colors and lasting safety.</p>
                 </div>
                 <!-- Service 2: Exterior Painting -->
-                <div class="bg-berger-light p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.02]">
-                    <div class="text-5xl text-berger-gold mb-4">🏠</div>
-                    <h3 class="text-xl font-semibold text-berger-blue mb-3">Weathercoat Protection</h3>
-                    <p class="text-gray-600">Protect your home against harsh weather. Our exterior paints offer superior durability, crack-resistance, and long-lasting color retention.</p>
+                <div class="bg-berger-light p-8 rounded-xl card-shadow transition duration-300 hover:shadow-lg hover:ring-4 ring-berger-accent/30">
+                    <div class="text-6xl text-berger-gold mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold text-berger-blue mb-3">Extreme Weather Protection</h3>
+                    <p class="text-gray-600">Our Weathercoat range provides maximum durability against rain, dust, and UV damage, keeping your exterior walls fresh for years.</p>
                 </div>
                 <!-- Service 3: Waterproofing & Repair -->
-                <div class="bg-berger-light p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.02]">
-                    <div class="text-5xl text-berger-gold mb-4">💧</div>
-                    <h3 class="text-xl font-semibold text-berger-blue mb-3">Advanced Waterproofing</h3>
-                    <p class="text-gray-600">Stop seepage and leakage permanently. Using advanced moisture meters and specialized coatings for comprehensive wall and ceiling waterproofing.</p>
+                <div class="bg-berger-light p-8 rounded-xl card-shadow transition duration-300 hover:shadow-lg hover:ring-4 ring-berger-accent/30">
+                    <div class="text-6xl text-berger-gold mb-4">💧</div>
+                    <h3 class="text-2xl font-bold text-berger-blue mb-3">Scientific Waterproofing</h3>
+                    <p class="text-gray-600">Permanent solutions for leakage and dampness using advanced moisture meters and specialized damp-proof coatings for guaranteed results.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section (Dummy Content Added & fixed overlapping) -->
-    <section id="products" class="py-16 bg-berger-light scroll-mt-16">
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-berger-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-berger-blue mb-10 border-b-2 border-berger-gold inline-block pb-1">Featured Products</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
-                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=Silk+Breathe+Easy" alt="Silk Breathe Easy" class="mx-auto rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/200x150/f7f9fc/1a2a47?text=Silk+Breathe+Easy';">
-                    <h3 class="font-bold text-berger-blue">Silk Breathe Easy</h3>
-                    <p class="text-sm text-gray-600">Luxury Interior Emulsion. Anti-bacterial & Anti-pollution.</p>
+            <h2 class="text-4xl font-bold text-berger-blue mb-12 border-b-4 border-berger-gold inline-block pb-2">Our Innovative Product Range</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.03]">
+                    <img src="https://placehold.co/200x150/e0e7ff/1a2a47?text=Silk+Breathe+Easy" alt="Silk Breathe Easy" class="mx-auto rounded-lg mb-4 w-full h-32 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/200x150/e0e7ff/1a2a47?text=Silk+Breathe+Easy';">
+                    <h3 class="font-bold text-xl text-berger-blue">Silk Breathe Easy</h3>
+                    <p class="text-sm text-gray-600 mt-1">Anti-Bacterial Luxury Emulsion</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
-                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=Weathercoat+All+Guard" alt="Weathercoat All Guard" class="mx-auto rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/200x150/f7f9fc/1a2a47?text=Weathercoat+All+Guard';">
-                    <h3 class="font-bold text-berger-blue">Weathercoat All Guard</h3>
-                    <p class="text-sm text-gray-600">Superior Exterior Paint. High durability and UV protection.</p>
+                <!-- Product 2 -->
+                <div class="bg-white p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.03]">
+                    <img src="https://placehold.co/200x150/ffe0b2/1a2a47?text=Weathercoat+Flex" alt="Weathercoat All Guard" class="mx-auto rounded-lg mb-4 w-full h-32 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/200x150/ffe0b2/1a2a47?text=Weathercoat+Flex';">
+                    <h3 class="font-bold text-xl text-berger-blue">Weathercoat Flex</h3>
+                    <p class="text-sm text-gray-600 mt-1">High-Performance Exterior Paint</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
-                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=Luxol+Hi-Gloss" alt="Luxol Hi-Gloss" class="mx-auto rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/200x150/f7f9fc/1a2a47?text=Luxol+Hi-Gloss';">
-                    <h3 class="font-bold text-berger-blue">Luxol Hi-Gloss</h3>
-                    <p class="text-sm text-gray-600">Enamel Finish. Mirror-like sheen for wood and metal surfaces.</p>
+                <!-- Product 3 -->
+                <div class="bg-white p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.03]">
+                    <img src="https://placehold.co/200x150/d1c4e9/1a2a47?text=Luxol+Hi-Gloss" alt="Luxol Hi-Gloss" class="mx-auto rounded-lg mb-4 w-full h-32 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/200x150/d1c4e9/1a2a47?text=Luxol+Hi-Gloss';">
+                    <h3 class="font-bold text-xl text-berger-blue">Luxol Hi-Gloss</h3>
+                    <p class="text-sm text-gray-600 mt-1">Premium Synthetic Enamel</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-shadow hover:ring-2 ring-berger-gold">
-                    <img src="https://placehold.co/200x150/f7f9fc/1a2a47?text=PU+Polishes" alt="PU Polishes" class="mx-auto rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/200x150/f7f9fc/1a2a47?text=PU+Polishes';">
-                    <h3 class="font-bold text-berger-blue">Imperia PU Polishes</h3>
-                    <p class="text-sm text-gray-600">Premium Wood Coatings. Scratch and stain resistant finish.</p>
+                <!-- Product 4 -->
+                <div class="bg-white p-6 rounded-xl card-shadow transition duration-300 hover:scale-[1.03]">
+                    <img src="https://placehold.co/200x150/b2ebf2/1a2a47?text=Bison+Putty" alt="PU Polishes" class="mx-auto rounded-lg mb-4 w-full h-32 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/200x150/b2ebf2/1a2a47?text=Bison+Putty';">
+                    <h3 class="font-bold text-xl text-berger-blue">Bison Wall Putty</h3>
+                    <p class="text-sm text-gray-600 mt-1">Superior Wall Leveling Solution</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section (Dummy Content Added & fixed overlapping) -->
-    <section id="process" class="py-16 bg-white scroll-mt-16">
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-berger-blue mb-10 border-b-2 border-berger-gold inline-block pb-1">Our 5-Step Express Process</h2>
-            <div class="flex flex-wrap justify-center text-left">
-                <!-- Step 1 -->
-                <div class="w-full md:w-1/5 p-4">
-                    <div class="text-4xl font-extrabold text-berger-gold">1.</div>
-                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Lead Capture</h4>
-                    <p class="text-sm text-gray-600">Customer enquires via website (This is where your AI agent is triggered).</p>
+            <h2 class="text-4xl font-bold text-berger-blue mb-12 border-b-4 border-berger-gold inline-block pb-2">The Automated Process Flow</h2>
+            
+            <div class="relative flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-4">
+                
+                <!-- Horizontal/Vertical Line Connector -->
+                <div class="hidden md:block absolute top-10 left-0 right-0 h-1 bg-berger-light z-0"></div>
+                <div class="md:hidden absolute left-1/2 top-0 bottom-0 w-1 bg-berger-light z-0 transform -translate-x-1/2"></div>
+                
+                <!-- Step 1: Lead Capture -->
+                <div class="flex flex-col items-center w-full md:w-1/5 z-10 text-center">
+                    <div class="w-20 h-20 bg-berger-gold text-white rounded-full flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">1</div>
+                    <div class="mt-4 p-4 rounded-lg bg-berger-light card-shadow w-full">
+                        <h4 class="font-semibold text-lg text-berger-blue">Lead Capture</h4>
+                        <p class="text-sm text-gray-600">Customer fills the Fillout form on the website.</p>
+                    </div>
                 </div>
-                <!-- Step 2 -->
-                <div class="w-full md:w-1/5 p-4">
-                    <div class="text-4xl font-extrabold text-berger-gold">2.</div>
-                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Virtual Qualification</h4>
-                    <p class="text-sm text-gray-600">Our AI Agent calls the customer for initial screening & appointment booking.</p>
+                
+                <!-- Step 2: Automation Trigger -->
+                <div class="flex flex-col items-center w-full md:w-1/5 z-10 text-center">
+                    <div class="w-20 h-20 bg-berger-blue text-white rounded-full flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">2</div>
+                    <div class="mt-4 p-4 rounded-lg bg-berger-light card-shadow w-full">
+                        <h4 class="font-semibold text-lg text-berger-blue">Make Webhook</h4>
+                        <p class="text-sm text-gray-600">Form data hits the Make Webhook URL, triggering the scenario.</p>
+                    </div>
                 </div>
-                <!-- Step 3 -->
-                <div class="w-full md:w-1/5 p-4">
-                    <div class="text-4xl font-extrabold text-berger-gold">3.</div>
-                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Site Inspection</h4>
-                    <p class="text-sm text-gray-600">Certified engineer visits the site with modern moisture-testing tools.</p>
+                
+                <!-- Step 3: Agent Call -->
+                <div class="flex flex-col items-center w-full md:w-1/5 z-10 text-center">
+                    <div class="w-20 h-20 bg-berger-gold text-white rounded-full flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">3</div>
+                    <div class="mt-4 p-4 rounded-lg bg-berger-light card-shadow w-full">
+                        <h4 class="font-semibold text-lg text-berger-blue">AI Agent Call</h4>
+                        <p class="text-sm text-gray-600">AI Agent immediately calls the customer for qualification & confirmation.</p>
+                    </div>
                 </div>
-                <!-- Step 4 -->
-                <div class="w-full md:w-1/5 p-4">
-                    <div class="text-4xl font-extrabold text-berger-gold">4.</div>
-                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Express Painting</h4>
-                    <p class="text-sm text-gray-600">Supervised, mechanized, dust-free painting with superior product application.</p>
-                </div>
-                <!-- Step 5 -->
-                <div class="w-full md:w-1/5 p-4">
-                    <div class="text-4xl font-extrabold text-berger-gold">5.</div>
-                    <h4 class="font-semibold text-lg text-berger-blue mt-1">Post-Job Cleanup</h4>
-                    <p class="text-sm text-gray-600">Thorough cleanup and handover of a spotless, beautifully finished space.</p>
+                
+                <!-- Step 4: Calendar Block -->
+                <div class="flex flex-col items-center w-full md:w-1/5 z-10 text-center">
+                    <div class="w-20 h-20 bg-berger-blue text-white rounded-full flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">4</div>
+                    <div class="mt-4 p-4 rounded-lg bg-berger-light card-shadow w-full">
+                        <h4 class="font-semibold text-lg text-berger-blue">Engineer Calendar</h4>
+                        <p class="text-sm text-gray-600">Upon qualification, the system blocks the site engineer's calendar.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fillout Contact Form Integration (Replaced content with user's embed code) -->
-    <section id="contact-form" class="py-16 bg-berger-accent scroll-mt-16">
-        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center p-8 bg-white rounded-xl card-shadow">
+    <!-- Fillout Contact Form Integration -->
+    <section id="contact-form" class="py-20 bg-berger-accent">
+        <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center p-8 bg-white rounded-2xl card-shadow">
             <h2 class="text-3xl font-bold text-berger-blue mb-4">Book Your Agent Consultation</h2>
-            <p class="text-lg text-gray-700 mb-6">
-                Fill the form below to instantly trigger our automation and receive a callback from our AI Agent.
+            <p class="text-lg text-gray-700 mb-8">
+                Fill the form below to instantly trigger our Make automation and receive a callback from our AI Agent.
             </p>
             
             <!-- START: Embedded Fillout Form -->
@@ -187,11 +206,10 @@
     <!-- Footer -->
     <footer class="bg-berger-blue text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Berger Express Painting (Demo). All rights reserved.</p>
+            <p>&copy; 2025 Berger Express Painting (Demo). All rights reserved. | <a href="#contact-form" class="underline hover:text-berger-gold">Start a Project</a></p>
             <p class="text-sm mt-2 text-gray-400">Disclaimer: This is a static dummy website for demonstration purposes only.</p>
         </div>
     </footer>
 
-    <!-- Custom integration script removed, as the Fillout form handles the data submission. -->
 </body>
 </html>
